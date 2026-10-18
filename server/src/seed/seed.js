@@ -31,6 +31,20 @@ export async function seedAdmin() {
   return true;
 }
 
+export async function seedUsers() {
+  const users = [
+    { name: 'Admin', email: 'admin@gmail.com', role: 'admin', password: '123456' },
+    { name: 'User', email: 'tish@gmail.com', role: 'user', password: '123456' },
+  ];
+  let created = 0;
+  for (const u of users) {
+    if (await User.exists({ email: u.email.toLowerCase() })) continue;
+    await User.create({ name: u.name, email: u.email.toLowerCase(), role: u.role, passwordHash: await bcrypt.hash(u.password, 11) });
+    created += 1;
+  }
+  return created;
+}
+
 if (import.meta.url === `file://${process.argv[1]}`) {
   await mongoose.connect(config.mongoUri);
   const reset = process.argv.includes('--reset');
