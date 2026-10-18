@@ -68,7 +68,7 @@ export default function Login() {
             <div className="lfld-wrap">
               <span className="lfld-icon" dangerouslySetInnerHTML={{ __html: LOCK }} />
               <input
-                className="fld"
+                className="fld pw"
                 type={showPw ? 'text' : 'password'}
                 autoComplete="current-password"
                 disabled={busy}

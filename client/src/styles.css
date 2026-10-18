@@ -192,14 +192,16 @@ label.chk:has(input:disabled){cursor:default}
 .lform{display:flex;flex-direction:column;gap:12px}
 .lfld{display:flex;flex-direction:column;gap:7px}
 .lfld-label{font-size:.82rem;color:#6e7179;font-weight:500}
-.lfld-wrap{position:relative;display:flex;align-items:center}
-.lfld-icon{position:absolute;left:13px;width:18px;height:18px;color:#6e7179;pointer-events:none}
-.fld{padding-left:40px;padding:12px 14px;border:1px solid #dfe2ea;border-radius:8px;background:#fff;color:#0f0f0f;font-size:16px}
+.lfld-wrap{position:relative}
+.lfld-icon{position:absolute;left:16px;top:50%;transform:translateY(-50%);width:20px;height:20px;color:#6e7179;pointer-events:none}
+.fld{padding:12px 14px;padding-left:48px;border:1px solid #dfe2ea;border-radius:8px;background:#fff;color:#0f0f0f;font-size:16px}
 .fld::placeholder{color:#a8abb2}
+.fld.pw{padding-right:48px}
 .lfld.bad .fld{border-color:#c0392b}
 .lfld.bad .lfld-icon{color:#c0392b}
+.lfld.bad .lshow{color:#c0392b}
 .lfld-err{color:#c0392b;font-size:.78rem;min-height:1.15em}
-.lshow{background:none;border:0;padding:0;color:inherit;cursor:pointer;display:flex;align-items:center;justify-content:center;width:20px;height:20px}
+.lshow{position:absolute;right:16px;top:50%;transform:translateY(-50%);background:none;border:0;padding:0;color:#6e7179;cursor:pointer;display:flex;align-items:center;justify-content:center;width:20px;height:20px}
 .lopts{display:flex;align-items:center;justify-content:space-between;gap:10px}
 .lforgot{font-size:.84rem;color:#1a73e8;text-decoration:none;border-bottom:1px solid transparent}
 .lforgot:hover{color:#1557b0;border-bottom-color:#1a73e8}
