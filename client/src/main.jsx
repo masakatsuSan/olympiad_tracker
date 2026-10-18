@@ -14,3 +14,9 @@ createRoot(document.getElementById('root')).render(
     </BrowserRouter>
   </React.StrictMode>
 );
+
+if ('serviceWorker' in navigator) {
+  navigator.serviceWorker.register('/sw.js', { scope: '/' })
+    .then(() => console.log('Service Worker registered'))
+    .catch((e) => console.error('Service Worker registration failed', e));
+}

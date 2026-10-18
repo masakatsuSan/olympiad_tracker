@@ -81,16 +81,11 @@ export default function Login() {
               <button type="button" className="lshow" disabled={busy} onClick={() => setShowPw(!showPw)} aria-label={showPw ? 'Hide password' : 'Show password'} dangerouslySetInnerHTML={{ __html: showPw ? EYE_CLOSED : EYE_OPEN }} />
             </div>
             {pwErr && <span id="pw-err" className="lfld-err">{pwErr}</span>}
-            <a className="lforgot" href="#" onClick={(e) => { e.preventDefault(); setError('Password resets are handled by your admin.'); }}>Forgot your password?</a>
           </div>
-          <button className="btn pri lbtn" disabled={busy}>{busy ? 'Signing in…' : 'Log in'}</button>
-          <div className="lor">OR</div>
-          <button type="button" className="btn lgoog" disabled={busy} onClick={() => setError('Sign in with Google is handled by your admin.')} dangerouslySetInnerHTML={{ __html: GOOGLE }}><span>Continue with Google</span></button>
-          <p className="ldesc">New to Olympiad Roadmap? Ask your admin to create an account for you.</p>
+          <button type="submit" className="lbtn btn pri" disabled={busy}>
+            {busy ? 'Signing in...' : 'Sign in'}
+          </button>
         </form>
-        <div className="lfoot">
-          <div className="ldemo">Demo: <b>admin@example.com</b> / <b>ChangeMe123!</b></div>
-        </div>
       </article>
     </div>
   );
